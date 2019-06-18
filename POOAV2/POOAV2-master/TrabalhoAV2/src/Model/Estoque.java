@@ -2,7 +2,6 @@ package Model;
 
 public class Estoque {
 private Produto codigo;
-private Produto nome;
 private double QTD;
 private String fileira;
 
@@ -12,12 +11,6 @@ public Produto getCodigo() {
 }
 public void setCodigo(Produto codigo) {
 	this.codigo = codigo;
-}
-public Produto getNome() {
-	return nome;
-}
-public void setNome(Produto nome) {
-	this.nome = nome;
 }
 public double getQTD() {
 	return QTD;
