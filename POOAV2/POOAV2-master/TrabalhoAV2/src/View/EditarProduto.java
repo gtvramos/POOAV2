@@ -21,7 +21,7 @@ import java.awt.event.ActionEvent;
 public class EditarProduto extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtNome;
+	private JTextField txtCodigo;
 	private JTextField txtPreco;
 
 	/**
@@ -53,11 +53,11 @@ public class EditarProduto extends JFrame {
 		JLabel lblEditarProduto = new JLabel("Editar Produto");
 		lblEditarProduto.setFont(new Font("Calibri", Font.BOLD, 25));
 		
-		JLabel lblNomeDoProduto = new JLabel("Nome do Produto:");
-		lblNomeDoProduto.setFont(new Font("Calibri", Font.BOLD, 20));
+		JLabel lblCodigoDoProduto = new JLabel("Código do Produto:");
+		lblCodigoDoProduto.setFont(new Font("Calibri", Font.BOLD, 20));
 		
-		txtNome = new JTextField();
-		txtNome.setColumns(10);
+		txtCodigo = new JTextField();
+		txtCodigo.setColumns(10);
 		
 		JLabel lblNovoPreo = new JLabel("Novo pre\u00E7o:");
 		lblNovoPreo.setFont(new Font("Calibri", Font.BOLD, 20));
@@ -69,7 +69,7 @@ public class EditarProduto extends JFrame {
 		btnEditar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ProdutoController controller = new ProdutoController();
-				if(controller.editar(txtNome, txtPreco)==1)JOptionPane.showMessageDialog(null,"Alterado com Sucesso!");
+				if(controller.editar(txtCodigo, txtPreco)==1)JOptionPane.showMessageDialog(null,"Alterado com Sucesso!");
 				else { 
 					JOptionPane.showMessageDialog(null,"Erro");
 				}
@@ -83,10 +83,10 @@ public class EditarProduto extends JFrame {
 					.addGap(56)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 						.addComponent(lblNovoPreo)
-						.addComponent(lblNomeDoProduto))
+						.addComponent(lblCodigoDoProduto))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtCodigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(txtPreco, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(88, Short.MAX_VALUE))
 				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
@@ -105,8 +105,8 @@ public class EditarProduto extends JFrame {
 					.addComponent(lblEditarProduto)
 					.addGap(26)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNomeDoProduto)
-						.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(lblCodigoDoProduto)
+						.addComponent(txtCodigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 						.addComponent(lblNovoPreo)
