@@ -25,7 +25,7 @@ import javax.swing.JButton;
 public class RemoverEstoque extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtNome;
+	private JTextField txtCodigo;
 
 	/**
 	 * Launch the application.
@@ -53,20 +53,20 @@ public class RemoverEstoque extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JLabel lblNomeDoProduto = new JLabel("Nome do produto:");
-		lblNomeDoProduto.setFont(new Font("Calibri", Font.BOLD, 20));
+		JLabel lblCodigoDoProduto = new JLabel("Codigo do Produto:");
+		lblCodigoDoProduto.setFont(new Font("Calibri", Font.BOLD, 20));
 		
 		JLabel lblRemoverDoEstoque = new JLabel("Remover do Estoque");
 		lblRemoverDoEstoque.setFont(new Font("Calibri", Font.BOLD, 25));
 		
-		txtNome = new JTextField();
-		txtNome.setColumns(10);
+		txtCodigo = new JTextField();
+		txtCodigo.setColumns(10);
 		
 		JButton btnRemover = new JButton("Remover");
 	     btnRemover.addActionListener(new ActionListener() {
 		 public void actionPerformed(ActionEvent arg0) {
 			 EstoqueController controller = new EstoqueController();
-			 if(controller.remover(txtNome)==1)JOptionPane.showMessageDialog(null,"Removido com sucesso!");
+			 if(controller.remover(txtCodigo)==1)JOptionPane.showMessageDialog(null,"Removido com sucesso!");
 			 else {JOptionPane.showMessageDialog(null,"Erro ao remover");}
 		 dispose();
 		 }
@@ -81,9 +81,9 @@ public class RemoverEstoque extends JFrame {
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
 								.addComponent(lblRemoverDoEstoque)
 								.addGroup(gl_contentPane.createSequentialGroup()
-									.addComponent(lblNomeDoProduto)
+									.addComponent(lblCodigoDoProduto)
 									.addPreferredGap(ComponentPlacement.RELATED)
-									.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+									.addComponent(txtCodigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(162)
 							.addComponent(btnRemover)))
@@ -96,8 +96,8 @@ public class RemoverEstoque extends JFrame {
 					.addComponent(lblRemoverDoEstoque)
 					.addGap(43)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNomeDoProduto)
-						.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(lblCodigoDoProduto)
+						.addComponent(txtCodigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(28)
 					.addComponent(btnRemover)
 					.addContainerGap(77, Short.MAX_VALUE))
