@@ -27,11 +27,11 @@ import java.sql.ResultSet;
 
 
 public class ProdutoController {
-	public int criar(JTextField txtNome,JTextField txtCodigo , JTextField txtPreco)
+	public int criar(JTextField txtCodigo,JTextField txtNome , JTextField txtPreco)
 	{
 		try {
 			Conexao con = new Conexao();
-			String query = "INSERT INTO produto( nome,codigo,preco) VALUES ('" + txtNome.getText() + "','" + Integer.parseInt(txtCodigo.getText()) + "','" + txtPreco.getText() + "')";
+			String query = "INSERT INTO produto( codigo,nome,preco) VALUES ('" + Integer.parseInt(txtCodigo.getText()) + "\','" + txtNome.getText() + "','" + txtPreco.getText() + "')";
 			Statement st = con.conexao.createStatement();
 			st.executeUpdate(query);
 			con.conexao.close();
@@ -42,12 +42,12 @@ public class ProdutoController {
 		return 0;
 	}
 		
-	public int editar(JTextField txtNome,JTextField txtPreco)
+	public int editar(JTextField txtCodigo,JTextField txtPreco)
 		{
 			try {
 				Conexao con = new Conexao();
 				Statement st = con.conexao.createStatement();
-				String query = "UPDATE produto SET Preco='"+Integer.parseInt(txtPreco.getText())+"' where Nome='" + txtNome.getText()+"'";
+				String query = "UPDATE produto SET Preco='"+Integer.parseInt(txtPreco.getText())+"' where codigo='" + txtCodigo.getText()+"'";
 				st = con.conexao.createStatement();
 				st.executeUpdate(query);
 				con.conexao.close();
@@ -58,12 +58,12 @@ public class ProdutoController {
 			} 
 			return 0;
 }
-	public int remover(JTextField txtNome)
+	public int remover(JTextField txtCodigo)
 	{
 		try {
 			Conexao con = new Conexao();
 			Statement st = con.conexao.createStatement();
-			String query = "DELETE FROM produto where Nome='" + txtNome.getText()+"'";
+			String query = "DELETE FROM produto where codigo='" + txtCodigo.getText()+"'";
 			st = con.conexao.createStatement();
 			st.executeUpdate(query);
 			con.conexao.close();
