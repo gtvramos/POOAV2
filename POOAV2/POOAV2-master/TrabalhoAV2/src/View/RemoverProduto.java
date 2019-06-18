@@ -21,7 +21,7 @@ import java.awt.event.ActionEvent;
 public class RemoverProduto extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtNome;
+	private JTextField txtCodigo;
 
 	/**
 	 * Launch the application.
@@ -52,17 +52,17 @@ public class RemoverProduto extends JFrame {
 		JLabel lblRemoverProduto = new JLabel("Remover Produto");
 		lblRemoverProduto.setFont(new Font("Calibri", Font.BOLD, 25));
 		
-		JLabel lblNomeDoProduto = new JLabel("Nome do produto:");
-		lblNomeDoProduto.setFont(new Font("Calibri", Font.BOLD, 20));
+		JLabel lblCodigoDoProduto = new JLabel("Codigo do Produto:");
+		lblCodigoDoProduto.setFont(new Font("Calibri", Font.BOLD, 20));
 		
-		txtNome = new JTextField();
-		txtNome.setColumns(10);
+		txtCodigo = new JTextField();
+		txtCodigo.setColumns(10);
 		
 		JButton btnRemover = new JButton("Remover");
 		btnRemover.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ProdutoController controller = new ProdutoController();
-				if(controller.remover(txtNome)==1)JOptionPane.showMessageDialog(null,"Removido com Sucesso!");
+				if(controller.remover(txtCodigo)==1)JOptionPane.showMessageDialog(null,"Removido com Sucesso!");
 				else {
 					JOptionPane.showMessageDialog(null,"Erro");
 				}
@@ -76,9 +76,9 @@ public class RemoverProduto extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(44)
-							.addComponent(lblNomeDoProduto)
+							.addComponent(lblCodigoDoProduto)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addComponent(txtCodigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(114)
 							.addComponent(lblRemoverProduto))
@@ -94,8 +94,8 @@ public class RemoverProduto extends JFrame {
 					.addComponent(lblRemoverProduto)
 					.addGap(49)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNomeDoProduto)
-						.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(lblCodigoDoProduto)
+						.addComponent(txtCodigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(30)
 					.addComponent(btnRemover)
 					.addContainerGap(69, Short.MAX_VALUE))
