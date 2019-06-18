@@ -25,7 +25,6 @@ import javax.swing.JScrollPane;
 public class CriarEstoque extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtNome;
 	private JTextField txtQTD;
 	private JLabel lblEstoque;
 	private JTextField txtFileira;
@@ -54,12 +53,6 @@ public class CriarEstoque extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JLabel lblNomeDoProduto = new JLabel("Nome do produto:");
-		lblNomeDoProduto.setFont(new Font("Calibri", Font.BOLD, 14));
-		
-		txtNome = new JTextField();
-		txtNome.setColumns(10);
-		
 		txtQTD = new JTextField();
 		txtQTD.setColumns(10);
 		
@@ -73,7 +66,7 @@ public class CriarEstoque extends JFrame {
 		btnEnviar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				EstoqueController controller = new EstoqueController();
-				if(controller.criar(txtCodigo,txtNome,txtQTD,txtFileira)==1)JOptionPane.showMessageDialog(null,"Adicionado com Sucesso!");
+				if(controller.criar(txtCodigo,txtQTD,txtFileira)==1)JOptionPane.showMessageDialog(null,"Adicionado com Sucesso!");
 				else {
 					JOptionPane.showMessageDialog(null,"Erro ao adicionar!");
 				}
@@ -96,50 +89,45 @@ public class CriarEstoque extends JFrame {
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap(199, Short.MAX_VALUE)
-					.addComponent(btnEnviar)
-					.addGap(138))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap(170, Short.MAX_VALUE)
-					.addComponent(lblEstoque)
-					.addGap(154))
-				.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-					.addGap(18)
+					.addContainerGap(18, Short.MAX_VALUE)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addComponent(lblNomeDoProduto)
-						.addComponent(lblCodigoDoProduto)
-						.addComponent(lblQuantidade)
-						.addComponent(lblFileira))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(txtFileira, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtQTD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtCodigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addContainerGap(166, Short.MAX_VALUE))
+						.addComponent(btnEnviar)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+								.addComponent(lblCodigoDoProduto)
+								.addComponent(lblQuantidade)
+								.addComponent(lblFileira))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(txtQTD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtCodigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(txtFileira, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(12))
+						.addComponent(lblEstoque))
+					.addGap(154))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblEstoque)
-					.addGap(22)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(lblEstoque)
+							.addGap(90))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(txtCodigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblCodigoDoProduto))
+							.addGap(18)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblQuantidade)
+								.addComponent(txtQTD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addPreferredGap(ComponentPlacement.RELATED)))
+					.addGap(18)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblCodigoDoProduto)
-						.addComponent(txtCodigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(12)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNomeDoProduto)
-						.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(txtQTD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblQuantidade))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(txtFileira, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblFileira))
-					.addPreferredGap(ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+						.addComponent(lblFileira)
+						.addComponent(txtFileira, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(25)
 					.addComponent(btnEnviar)
 					.addContainerGap())
 		);
