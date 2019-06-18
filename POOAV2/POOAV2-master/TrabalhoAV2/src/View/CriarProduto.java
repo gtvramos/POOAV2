@@ -60,13 +60,13 @@ public class CriarProduto extends JFrame {
 		txtNome = new JTextField();
 		txtNome.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("Código:");
+		JLabel lblNewLabel = new JLabel("CÃ³digo:");
 		lblNewLabel.setFont(new Font("Calibri", Font.BOLD, 20));
 		
 		txtCodigo = new JTextField();
 		txtCodigo.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel("Preço:");
+		JLabel lblNewLabel_1 = new JLabel("PreÃ§o:");
 		lblNewLabel_1.setFont(new Font("Calibri", Font.BOLD, 20));
 		
 		txtPreco = new JTextField();
@@ -76,7 +76,7 @@ public class CriarProduto extends JFrame {
 		btnEnviar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ProdutoController controller = new ProdutoController();
-				if(controller.criar(txtNome, txtCodigo, txtPreco)==1)JOptionPane.showMessageDialog(null,"Adicionado com Sucesso!");
+				if(controller.criar(txtCodigo, txtNome, txtPreco)==1)JOptionPane.showMessageDialog(null,"Adicionado com Sucesso!");
 				else {
 					JOptionPane.showMessageDialog(null,"Erro");
 				}
@@ -85,7 +85,7 @@ public class CriarProduto extends JFrame {
 		});
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
+			gl_contentPane.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap(120, Short.MAX_VALUE)
 					.addComponent(lblAdicionarProduto)
@@ -93,16 +93,16 @@ public class CriarProduto extends JFrame {
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGap(47)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addComponent(lblNewLabel_1)
+						.addComponent(lblNomeDoProduto)
 						.addComponent(lblNewLabel)
-						.addComponent(lblNomeDoProduto))
+						.addComponent(lblNewLabel_1))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtPreco, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(txtCodigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(txtPreco, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(97, Short.MAX_VALUE))
-				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap(186, Short.MAX_VALUE)
 					.addComponent(btnEnviar, GroupLayout.PREFERRED_SIZE, 87, GroupLayout.PREFERRED_SIZE)
 					.addGap(149))
@@ -113,19 +113,19 @@ public class CriarProduto extends JFrame {
 					.addComponent(lblAdicionarProduto)
 					.addGap(31)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNomeDoProduto))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel)
 						.addComponent(txtCodigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(9)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNomeDoProduto)
+						.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_1)
-						.addComponent(txtPreco, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(txtPreco, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNewLabel_1))
 					.addGap(30)
 					.addComponent(btnEnviar)
-					.addContainerGap(34, Short.MAX_VALUE))
+					.addContainerGap(32, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
