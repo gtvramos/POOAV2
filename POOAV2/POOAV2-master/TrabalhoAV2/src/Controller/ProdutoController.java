@@ -60,12 +60,13 @@ public class ProdutoController {
 }
 	public int remover(JTextField txtCodigo)
 	{
-		try {
-			Conexao con = new Conexao();
+		try {Conexao con = new Conexao();
 			Statement st = con.conexao.createStatement();
-			String query = "DELETE FROM produto where codigo='" + txtCodigo.getText()+"'";
+			String query = "DELETE FROM estoque where codigo='" + txtCodigo.getText()+"'";
+			String query1 = "DELETE FROM produto where codigo='" + txtCodigo.getText()+"'";
 			st = con.conexao.createStatement();
 			st.executeUpdate(query);
+			st.executeUpdate(query1);
 			con.conexao.close();
 			return 1;
 		} catch (SQLException e) {
