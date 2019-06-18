@@ -1,14 +1,22 @@
 package Model;
 
 public class Estoque {
-private String nome;
+private Produto codigo;
+private Produto nome;
 private double QTD;
 private String fileira;
 
-public String getNome() {
+
+public Produto getCodigo() {
+	return codigo;
+}
+public void setCodigo(Produto codigo) {
+	this.codigo = codigo;
+}
+public Produto getNome() {
 	return nome;
 }
-public void setNome(String nome) {
+public void setNome(Produto nome) {
 	this.nome = nome;
 }
 public double getQTD() {
