@@ -26,7 +26,7 @@ public class EditarEstoque extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtQTD;
-	private JTextField txtNome;
+	private JTextField txtCodigo;
 
 	/**
 	 * Launch the application.
@@ -57,8 +57,8 @@ public class EditarEstoque extends JFrame {
 		JLabel lblEditarEstoque = new JLabel("Editar quantidade em estoque");
 		lblEditarEstoque.setFont(new Font("Calibri", Font.BOLD, 25));
 		
-		JLabel lblNomeDoProduto = new JLabel("Nome do produto:");
-		lblNomeDoProduto.setFont(new Font("Calibri", Font.BOLD, 20));
+		JLabel lblCodigoDoProduto = new JLabel("Código do produto:");
+		lblCodigoDoProduto.setFont(new Font("Calibri", Font.BOLD, 20));
 		
 		JLabel lblNovaQuantidade = new JLabel("Nova quantidade:");
 		lblNovaQuantidade.setFont(new Font("Calibri", Font.BOLD, 20));
@@ -66,14 +66,14 @@ public class EditarEstoque extends JFrame {
 		txtQTD = new JTextField();
 		txtQTD.setColumns(10);
 		
-		txtNome = new JTextField();
-		txtNome.setColumns(10);
+		txtCodigo = new JTextField();
+		txtCodigo.setColumns(10);
 		
 		JButton btnEditar = new JButton("Editar");
 		btnEditar.addActionListener(new ActionListener() {
 			 public void actionPerformed(ActionEvent arg0) {
 				 EstoqueController controller = new EstoqueController();
-				 if(controller.editar(txtNome, txtQTD)==1)JOptionPane.showMessageDialog(null,"Editado com sucesso!");
+				 if(controller.editar(txtCodigo, txtQTD)==1)JOptionPane.showMessageDialog(null,"Editado com sucesso!");
 				 else {JOptionPane.showMessageDialog(null,"Erro ao editar");}
 			 dispose();
 			 }
@@ -89,12 +89,12 @@ public class EditarEstoque extends JFrame {
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(34)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-								.addComponent(lblNomeDoProduto)
+								.addComponent(lblCodigoDoProduto)
 								.addComponent(lblNovaQuantidade))
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addComponent(txtQTD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+								.addComponent(txtCodigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(155)
 							.addComponent(btnEditar, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)))
@@ -107,8 +107,8 @@ public class EditarEstoque extends JFrame {
 					.addComponent(lblEditarEstoque)
 					.addGap(36)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNomeDoProduto))
+						.addComponent(txtCodigo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblCodigoDoProduto))
 					.addGap(18)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(txtQTD, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
