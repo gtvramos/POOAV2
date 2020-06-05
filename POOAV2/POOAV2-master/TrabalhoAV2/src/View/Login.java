@@ -29,12 +29,12 @@ public class Login extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		JLabel lblLogin = new JLabel("Login:");
+		JLabel lblLogin = new JLabel("Insira o Login:");
 		
 		txtLogin = new JTextField();
 		txtLogin.setColumns(10);
 		
-		JLabel lblSenha = new JLabel("Senha:");
+		JLabel lblSenha = new JLabel("Insira a senha:");
 		
 		txtSenha = new JPasswordField();
 		
